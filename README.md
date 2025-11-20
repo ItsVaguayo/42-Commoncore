@@ -1,9 +1,5 @@
 # 🚀 42 Barcelona Common Core Technical Log
 
-<div align="center">
-  <img src="[https://42barcelona.com/wp-content/uploads/2022/07/logo-42-barcelona.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/250px-42_Logo.svg.png)" alt="42 Logo" width="180"/>
-</div>
-
 ---
 
 I am a student at **42 Barcelona** since September 2025.  
