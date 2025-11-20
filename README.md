@@ -1,7 +1,7 @@
 # 🚀 42 Barcelona Common Core Technical Log
 
 <div align="center">
-  <img src="https://42barcelona.com/wp-content/uploads/2022/07/logo-42-barcelona.svg" alt="42 Barcelona Logo" width="180"/>
+  <img src="[https://42barcelona.com/wp-content/uploads/2022/07/logo-42-barcelona.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/250px-42_Logo.svg.png)" alt="42 Logo" width="180"/>
 </div>
 
 ---
@@ -33,12 +33,12 @@ At 42 Barcelona, students tackle real computing problems in C, Python, networkin
 
 | Circle | Project                   | Status         | Notes                          |
 |--------|---------------------------|----------------|--------------------------------|
-| 0      | Libft                     | ❌ Not started |                                |
-| 1      | push_swap                 | ❌ Not started | Revamped, group project        |
-| 1      | printf                    | ❌ Not started |                                |
-| 1      | get_next_line             | ❌ Not started |                                |
+| 0      | Libft                     | ✅ Completed   |                                |
+| 1      | push_swap                 | ❌ Not started |                                |
+| 1      | printf                    | ✅ Completed   |                                |
+| 1      | get_next_line             | 🔄 In Progress |                                |
 | 2      | Piscine Python            | ❌ Not started | 10 sub-projects                |
-| 2      | born2beroot               | ❌ Not started | Systems/admin                  |
+| 2      | born2beroot               | 🔄 In Progress | Systems/admin                  |
 | 2      | A_Maze_ing                | ❌ Not started | Maze algo + visualization      |
 | 3      | Codexion                  | ❌ Not started | Threads, mutex, deadlocks      |
 | 3      | Fly-in Algorithms         | ❌ Not started | Graph theory                   |
@@ -54,9 +54,6 @@ At 42 Barcelona, students tackle real computing problems in C, Python, networkin
 > **Legend:**  
 > ✅ Completed | 🔄 In Progress | ❌ Not Started
 
-*Update status as you progress through the curriculum!*
-
----
 
 ## 🚀 How the Common Core Works
 
@@ -79,8 +76,3 @@ At 42 Barcelona, students tackle real computing problems in C, Python, networkin
 Grow as a systems, algorithmic, and AI-ready developer.  
 Master collaborative and technical skills, adapt to new tech, and solve real-world problems from day one.
 
----
-
-<div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXFjNzEwdDl0Z2g2Mm9tbHJxNmNpMXA0Mnp6czM4cmk1YjgyNmpvNiZjdD1n/2A75RyXVzzSI2bx4Gj/giphy.gif" alt="Code Progress" width="300"/>
-</div>
