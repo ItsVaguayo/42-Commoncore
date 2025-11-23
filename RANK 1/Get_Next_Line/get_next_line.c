@@ -45,7 +45,7 @@ char *line_reader(char **storage, int fd)
         return (free(*storage), *storage = NULL, NULL);
     return (*storage);
 }
-char *clean_line(char *storage);
+char *clean_line(char *storage)
 {
     char    *line;
     char    *tempstorage;
