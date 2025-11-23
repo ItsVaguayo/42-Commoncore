@@ -45,19 +45,19 @@ char *line_reader(char **storage, int fd)
         return (free(*storage), *storage = NULL, NULL);
     return (*storage);
 }
-char *clean_line(char *storage)
+char *clean_line(char *storage, size_t i)
 {
     char    *line;
     char    *tempstorage;
 
-    line = ft_substr(*storage, 0, i + 1);
-        tempstorage = ft_substr(*storage, i + 1, ft_strlen(*storage) - (i + 1));
+    line = ft_substr(storage, 0, i + 1);
+        tempstorage = ft_substr(storage, i + 1, ft_strlen(storage) - (i + 1));
         if (!line || !tempstorage)
         {
             free(line);
             free(tempstorage);
-            free(*storage);
-            *storage = NULL;
+            free(storage);
+            storage = NULL;
             return (NULL);
         }
         free(*storage);
@@ -75,9 +75,7 @@ char *line_separator(char **storage)
     while((*storage)[i] && (*storage)[i] != '\n') 
         i++;
     if ((*storage)[i] == '\n')
-    {
-        line = clean_line(*storage);
-    }
+        line = clean_line(*storage, i);
     else
     {
         line = ft_substr(*storage, 0, ft_strlen(*storage));
