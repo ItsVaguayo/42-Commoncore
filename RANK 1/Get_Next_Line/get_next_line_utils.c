@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:23:58 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/11/11 12:31:50 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/11/23 18:12:20 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	total_len = ft_strlen(s1) + ft_strlen(s2);
-	//if(total_len =< 0)
-	//	return NULL;
 	joined = (char *)malloc(total_len + 1);
 	if (!joined)
 		return (NULL);
@@ -75,10 +73,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*p;
-	size_t	total_size;
-	size_t	i;
-	unsigned char *s;
+	void			*p;
+	size_t			total_size;
+	size_t			i;
+	unsigned char	*s;
 
 	if (nmemb == 0 || size == 0)
 		total_size = 0;
@@ -93,7 +91,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	s = (unsigned char *)p;
 	i = 0;
-	while(i < total_size)
+	while (i < total_size)
 		s[i++] = '\0';
 	return (p);
 }
@@ -108,7 +106,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
-		return (ft_calloc(1,1));
+		return (ft_calloc(1, 1));
 	if (len > s_len - start)
 		len = s_len - start;
 	sub = (char *)malloc((len + 1) * sizeof(char));
