@@ -91,8 +91,8 @@ char *get_next_line(int fd)
     size_t i;
     if (fd < 0 || BUFFER_SIZE <= 0)
         return (NULL);
-    if (!*storage)
-        *storage = ft_calloc(1, 1);
+    if (!storage)
+        storage = ft_calloc(1, 1);
     if (!*storage)
         return (NULL);
     if (line_reader(&storage, fd) == NULL)
