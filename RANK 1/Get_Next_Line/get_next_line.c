@@ -60,8 +60,8 @@ char *clean_line(char *storage, size_t i)
             storage = NULL;
             return (NULL);
         }
-        free(*storage);
-        *storage = tempstorage;
+        free(storage);
+        storage = tempstorage;
     return (line);
 }
 char *line_separator(char **storage)
