@@ -45,23 +45,23 @@ char *line_reader(char **storage, int fd)
         return (free(*storage), *storage = NULL, NULL);
     return (*storage);
 }
-char *clean_line(char *storage, size_t i)
+char *clean_line(char **storage, size_t i);
 {
     char    *line;
     char    *tempstorage;
 
-    line = ft_substr(storage, 0, i + 1);
-        tempstorage = ft_substr(storage, i + 1, ft_strlen(storage) - (i + 1));
+    line = ft_substr(*storage, 0, i + 1);
+        tempstorage = ft_substr(*storage, i + 1, ft_strlen(*storage) - (i + 1));
         if (!line || !tempstorage)
         {
             free(line);
             free(tempstorage);
-            free(storage);
-            storage = NULL;
+            free(*storage);
+            *storage = NULL;
             return (NULL);
         }
-        free(storage);
-        storage = tempstorage;
+        free(*storage);
+        *storage = tempstorage;
     return (line);
 }
 char *line_separator(char **storage)
