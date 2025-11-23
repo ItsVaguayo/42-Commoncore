@@ -75,7 +75,7 @@ char *line_separator(char **storage)
     while((*storage)[i] && (*storage)[i] != '\n') 
         i++;
     if ((*storage)[i] == '\n')
-        line = clean_line(*storage, i);
+        line = clean_line(storage, i);
     else
     {
         line = ft_substr(*storage, 0, ft_strlen(*storage));
