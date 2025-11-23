@@ -32,6 +32,7 @@ int main(int argc, char **argv)
     {   
         printf("%s", str);
         free(str);
+        str = NULL;
         str = get_next_line(fd);
     }   
     close(fd);
