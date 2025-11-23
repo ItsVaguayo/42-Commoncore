@@ -21,10 +21,6 @@ char *line_reader(char **storage, int fd)
     char        *buffer;
     ssize_t     bytes;
     
-    if (!*storage)
-        *storage = ft_calloc(1, 1);
-    if (!*storage)
-        return (NULL);
     buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
     if (!buffer)
         return (NULL);
@@ -45,7 +41,7 @@ char *line_reader(char **storage, int fd)
         return (free(*storage), *storage = NULL, NULL);
     return (*storage);
 }
-char *clean_line(char **storage, size_t i);
+char *clean_line(char **storage, size_t i)
 {
     char    *line;
     char    *tempstorage;
@@ -94,6 +90,10 @@ char *get_next_line(int fd)
     
     size_t i;
     if (fd < 0 || BUFFER_SIZE <= 0)
+        return (NULL);
+    if (!*storage)
+        *storage = ft_calloc(1, 1);
+    if (!*storage)
         return (NULL);
     if (line_reader(&storage, fd) == NULL)
             return(NULL);
