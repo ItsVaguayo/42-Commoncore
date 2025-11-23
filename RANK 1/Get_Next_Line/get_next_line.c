@@ -27,7 +27,7 @@ char *line_reader(char **storage, int fd)
     char        *buffer;
     ssize_t     bytes;
     
-	init_storage(storage)
+	init_storage(storage);
     buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
     if (!buffer)
         return (NULL);
