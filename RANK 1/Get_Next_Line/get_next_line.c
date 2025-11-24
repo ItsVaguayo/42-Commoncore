@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:32:09 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/11/24 11:00:53 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:01:55 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (line_reader(&storage, fd) == NULL)
+	if (line_reader(&storage, fd, temp) == NULL)
 		return (NULL);
 	line = line_separator(&storage);
 	if (!line)
