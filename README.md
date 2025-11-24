@@ -29,10 +29,10 @@ At 42 Barcelona, students tackle real computing problems in C, Python, networkin
 
 | Circle | Project                   | Status         | Notes                          |
 |--------|---------------------------|----------------|--------------------------------|
-| 0      | Libft                     | ✅ Completed   |                                |
-| 1      | push_swap                 | ❌ Not started |                                |
-| 1      | printf                    | ✅ Completed   |                                |
-| 1      | get_next_line             | 🔄 In Progress |                                |
+| 0      | Libft                     | ✅ Completed   |Basic C library functions.      |
+| 1      | push_swap                 | ❌ Not started |Number sorting with stacks.     |
+| 1      | printf                    | ✅ Completed   |Custom printf implementation.   |
+| 1      | get_next_line             | ✅ Completed   |Read files line by line.        |
 | 2      | Piscine Python            | ❌ Not started | 10 sub-projects                |
 | 2      | born2beroot               | 🔄 In Progress | Systems/admin                  |
 | 2      | A_Maze_ing                | ❌ Not started | Maze algo + visualization      |
