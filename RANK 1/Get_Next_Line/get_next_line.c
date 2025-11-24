@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:32:09 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/11/22 21:12:58 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:00:53 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,29 @@
 
 static int	init_storage(char **storage)
 {
+	char	*buffer;
+
 	if (!*storage)
 		*storage = ft_calloc(1, 1);
-	return (*storage != NULL);
+	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	return (buffer);
 }
-char	*line_reader(char **storage, int fd)
+
+char	*line_reader(char **storage, int fd, char *temp)
 {
 	char	*buffer;
 	ssize_t	bytes;
-	char	*temp;
 
-	init_storage(storage);
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	buffer = init_storage(storage);
 	if (!buffer)
 		return (NULL);
 	bytes = 1;
-	while (!ft_strchr(*storage, '\n') && (bytes = read(fd, buffer,
-				BUFFER_SIZE)) > 0)
+	while (!ft_strchr(*storage, '\n'))
 	{
-		buffer[bytes] = '\0';
+		bytes = read(fd, buffer, BUFFER_SIZE) > 0;
+		if (bytes <= 0)
+			break ;
+		buffer [bytes] = '\0';
 		temp = *storage;
 		*storage = ft_strjoin(temp, buffer);
 		free(temp);
@@ -50,6 +54,7 @@ char	*line_reader(char **storage, int fd)
 		return (free(*storage), *storage = NULL, NULL);
 	return (*storage);
 }
+
 char	*clean_line(char **storage, size_t i)
 {
 	char	*line;
@@ -68,6 +73,7 @@ char	*clean_line(char **storage, size_t i)
 	*storage = tempstorage;
 	return (line);
 }
+
 char	*line_separator(char **storage)
 {
 	char	*line;
@@ -93,10 +99,11 @@ char	*line_separator(char **storage)
 
 char	*get_next_line(int fd)
 {
-	static char *storage;
-	char *line;
+	static char	*storage;
+	char		*line;
+	char		*temp;
+	size_t		i;
 
-	size_t i;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (line_reader(&storage, fd) == NULL)
