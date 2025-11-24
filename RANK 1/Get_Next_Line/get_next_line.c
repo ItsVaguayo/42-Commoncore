@@ -98,8 +98,8 @@ char	*get_next_line(int fd)
 	static char	*storage;
 	char		*line;
 	char		*temp;
-	size_t		i;
 
+	temp = NULL
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (line_reader(&storage, fd, temp) == NULL)
