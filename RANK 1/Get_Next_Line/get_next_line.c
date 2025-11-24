@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:32:09 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/11/24 11:01:55 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:09:39 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define BUFFER_SIZE 1
 #endif
 
-static int	init_storage(char **storage)
+char	*init_storage(char **storage)
 {
 	char	*buffer;
 

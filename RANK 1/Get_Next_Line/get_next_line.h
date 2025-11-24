@@ -10,7 +10,11 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*line_reader(char **warehouse, int fd);
+char	*line_reader(char **storage, int fd, char *temp);
+char	*init_storage(char **storage);
+char	*line_separator(char **storage);
+char	*clean_line(char **storage, size_t i);
+
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
