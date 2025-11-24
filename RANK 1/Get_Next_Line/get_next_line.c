@@ -6,15 +6,11 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:32:09 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/11/24 11:09:39 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:14:59 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1
-#endif
 
 char	*init_storage(char **storage)
 {
@@ -37,7 +33,7 @@ char	*line_reader(char **storage, int fd, char *temp)
 	bytes = 1;
 	while (!ft_strchr(*storage, '\n'))
 	{
-		bytes = read(fd, buffer, BUFFER_SIZE) > 0;
+		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes <= 0)
 			break ;
 		buffer [bytes] = '\0';
