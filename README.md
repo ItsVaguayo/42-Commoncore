@@ -1,6 +1,10 @@
 # 🚀 42 Barcelona Common Core Technical Log
 
 ---
+![42 School](https://img.shields.io/badge/-School-000000?style=flat-square&logo=42&logoColor=white)
+![Language](https://img.shields.io/badge/Language-C%20%2F%20Python-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square)
+
 
 I am a student at **42 Barcelona** since September 2025.  
 This repository is a technical logbook for my journey through the Common Core curriculum.  
