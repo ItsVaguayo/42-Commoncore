@@ -25,10 +25,4 @@ typedef struct s_node {
     printf("%d\n", n1.next ->value);
     printf("%d\n", n1.next ->next->value);
 }*/          
-t_node *create_node(int val)
-{
-    t_node *new = malloc(sizeof(t_node));
 
-    new.next = NULL;
-
-}
