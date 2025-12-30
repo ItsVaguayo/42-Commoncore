@@ -16,8 +16,14 @@ typedef struct s_node
 /* ===== PARSING ===== */
 
 long    ft_atol(const char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(char *src);
+size_t	ft_strlen(const char *s);
 int     is_valid_number(char *str);
-t_node  *parsing(char **argv);
+t_node  *parsing(int argc, char **argv);
+
+int	ft_printf(char const *format, ...);
 
 /* ===== LIST UTILS ===== */
 

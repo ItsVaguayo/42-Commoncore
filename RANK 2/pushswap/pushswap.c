@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/12/23 15:08:30 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/12/29 19:25:38 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,23 @@ void add_back(t_node **head, int value)
         temp = temp->next;
     temp->next = new;
 }
-t_node *parsing(char **argv)
+t_node *parsing(int argc, char **argv)
 {
     t_node *stack_a;
+    char **tempnumbers;
     int i;
 
     stack_a = NULL;
     i = 1;
-    while (argv[i] != NULL)
+    tempnumbers = argv;
+    if (argc == 2)
     {
-        add_back(&stack_a,ft_atol(argv[i]));
+        tempnumbers = ft_split(argv[1], ' ');
+        i = 0;
+    }
+    while (tempnumbers[i] != NULL)
+    {
+        add_back(&stack_a,ft_atol(tempnumbers[i]));
         i++;
     }
     return (stack_a);
@@ -74,7 +81,7 @@ int main(int argc, char **argv)
     if (!(argc > 1))
         return (write(2, "Error\n", 6));
 
-    stack_a = parsing(argv);
+    stack_a = parsing(argc, argv);
     print_list(&stack_a);
     return(0);
 }
