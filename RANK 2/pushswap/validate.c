@@ -6,11 +6,57 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 00:09:19 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/12/30 00:40:09 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/01 19:17:54 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+int count_numbers(char **numbers)
+{
+    int i = 0;
+    while (numbers[i])
+        i++;
+    return i;
+}
+
+long *to_long_array(char **numbers, int size)
+{
+    long *arr;
+    int i;
+
+    arr = malloc(sizeof(long) * size);
+    if (!arr)
+        return NULL;
+
+    i = 0;
+    while (i < size)
+    {
+        arr[i] = ft_atol(numbers[i]);
+        i++;
+    }
+    return arr;
+}
+
+int has_duplicates(long *arr, int size)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < size)
+    {
+        j = i + 1;
+        while (j < size)
+        {
+            if (arr[i] == arr[j])
+                return 1;
+            j++;
+        }
+        i++;
+    }
+    return 0;
+}
 
 int validate_format(char **numbers)
 {
@@ -36,5 +82,3 @@ int validate_format(char **numbers)
     }
     return (1);
 }
-
-int validate_duplicates()
