@@ -6,13 +6,13 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 00:09:19 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/01 19:17:54 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/02 17:59:09 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int count_numbers(char **numbers)
+static int count_numbers(char **numbers)
 {
     int i = 0;
     while (numbers[i])
@@ -50,7 +50,7 @@ int has_duplicates(long *arr, int size)
         while (j < size)
         {
             if (arr[i] == arr[j])
-                return 1;
+                return (1);
             j++;
         }
         i++;
@@ -73,7 +73,7 @@ int validate_format(char **numbers)
             return (0);
         while (numbers[i][z] != '\0')
         {
-            if (numbers[i][z] < '0' && numbers[i][z] > '9')
+            if (numbers[i][z] < '0' || numbers[i][z] > '9')
                 return (0);
             z++;
         }
@@ -81,4 +81,19 @@ int validate_format(char **numbers)
         z = 0;
     }
     return (1);
+}
+int validate(char **numbers)
+{
+    long *arr;
+    int size;
+    
+    if (!numbers)
+        return(0);
+    if (!validate_format(numbers))
+        return (0);
+    size = count_numbers(numbers);
+    arr = to_long_array(numbers, size);
+    if (!arr || has_duplicates(arr, size))
+        return(free(arr),0);
+    return (free(arr),1);
 }

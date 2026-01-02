@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 18:03:50 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/12/29 19:10:15 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/02 17:10:40 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static unsigned int	ft_word_count(char const *s, char c)
 	return (count);
 }
 
-static void	*free_split(char **arr)
+void	*free_split(char **arr)
 {
 	int	i;
 

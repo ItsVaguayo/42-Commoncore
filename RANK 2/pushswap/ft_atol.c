@@ -7,7 +7,14 @@ static int	ft_isspace(char c)
 		return (1);
 	return (0);
 }
-
+static void check_overflow(long res)
+{
+	if (res > INT_MAX || res < INT_MIN)
+    {
+        write(2, "Error\n", 6);
+        exit(1);
+    }
+}
 long    ft_atol(const char *str)
 {
 	int		i;
@@ -30,11 +37,7 @@ long    ft_atol(const char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-    
-    if ((res *= sign) > INT_MAX || (res *= sign) <= INT_MIN)
-    {
-        write(2, "Error\n", 6);
-        exit(1);
-    }
-	return ((res * sign));
+    res *= sign;
+	check_overflow(res);
+	return (res);
 }

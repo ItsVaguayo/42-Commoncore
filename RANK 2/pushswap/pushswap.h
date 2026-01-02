@@ -13,17 +13,26 @@ typedef struct s_node
     struct s_node   *next;
 }   t_node;
 
-/* ===== PARSING ===== */
-
+/* ===== LIBFT ===== */
 long    ft_atol(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(char *src);
 size_t	ft_strlen(const char *s);
-int     is_valid_number(char *str);
-t_node  *parsing(int argc, char **argv);
 
 int	ft_printf(char const *format, ...);
+
+/* ===== PARSING ===== */
+
+int validate(char **numbers);
+int     is_valid_number(char *str);
+t_node  *parsing(int argc, char **argv);
+int validate_format(char **numbers);
+int has_duplicates(long *arr, int size);
+long *to_long_array(char **numbers, int size);
+void	*free_split(char **arr);
+void build_stack(t_node **stack_a, char **numbers);
+
 
 /* ===== LIST UTILS ===== */
 
