@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/02 17:42:56 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/04 11:26:59 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,19 @@ void print_list(t_node **head)
        temp = temp->next;
     }
     
+}
+int is_sorted(t_node **head)
+{
+    t_node *temp;
+    
+    if ((*head) == NULL)
+        return (0);
+    temp = *head;
+    while (temp && temp->next)
+    {
+        if (temp->value > temp->next->value)
+            return (0);
+        temp = temp->next;
+    }
+    return (1);
 }

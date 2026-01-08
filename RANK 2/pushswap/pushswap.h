@@ -39,10 +39,26 @@ void build_stack(t_node **stack_a, char **numbers);
 t_node  *create_node(int value);
 void    add_back(t_node **head, int value);
 void    free_list(t_node *head);
+int     is_sorted(t_node **head);
+int     stack_size(t_node **stack);
 
 /* ===== OPERATIONS ===== */
 
-void    push(t_node **from, t_node **to);
-void    swap(t_node **head);
+void pa(t_node **stack_b, t_node **stack_a);
+void pb(t_node **stack_a, t_node **stack_b);
+void ra(t_node **stack_a);
+void rb(t_node **stack_b);
+void rr(t_node **stack_a, t_node **stack_b);
+void rra(t_node **stack_a);
+void rrb(t_node **stack_b);
+void rrr(t_node **stack_a, t_node **stack_b);
+void sa(t_node **stack_a);
+void sb(t_node **stack_b);
+void ss(t_node **stack_a, t_node **stack_b);
 
+/* ===== SORT ===== */
+
+void sort_two(t_node **stack_a);
+void sort_three(t_node **stack_a);
+void sort_five(t_node **stack_a, t_node **stack_b);
 #endif
