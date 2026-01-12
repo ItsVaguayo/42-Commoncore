@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 11:38:02 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/08 16:53:17 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:58:28 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ int stack_size(t_node **stack)
 	t_node 	*temp;
 	int 	size;
 
-	temp = *stack;
+	if (!stack || !(*stack))
+        return (0);
+    temp = *stack;
 	size = 0;
-	while (temp->next)
+	while (temp)
 	{
-		temp = temp->next;
 		size++;
+        temp = temp->next;
 	}
 	return (size);
 }
@@ -33,7 +35,7 @@ static int min_pos(t_node **stack_a, int min_value)
     
 	temp = *stack_a;
 	min_pos = 0;
-	while (min_value == temp->value)
+	while (temp && temp->value != min_value)
 	{
 		temp = temp->next;
 		min_pos++;
@@ -82,6 +84,6 @@ void sort_five(t_node **stack_a, t_node **stack_b)
         pb(stack_a, stack_b);
     }
     sort_three(stack_a);
-    while (*stack_b != NULL)
+    while (*stack_b)
         pa(stack_a, stack_b);
 }
