@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:50:58 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/12/22 19:27:56 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/12 10:07:59 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ static void swap(t_node **stack)
 void sa(t_node **stack_a)
 {
     swap(stack_a);
-    ft_printf("sa");
+    write(1,"sa\n",3);
 }
 void sb(t_node **stack_b)
 {
     swap(stack_b);
-    ft_printf("sb");
+    write(1,"sb\n",3);
 }
 
 void ss(t_node **stack_a, t_node **stack_b)
 {
     swap(stack_a);
     swap(stack_b);
-    ft_printf("ss");
+    write(1,"ss\n",3);
 }

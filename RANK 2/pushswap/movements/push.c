@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 19:07:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/12/22 19:07:33 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/12 10:07:12 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static void push(t_node **from_stack,t_node **to_stack)
 void pa(t_node **stack_b, t_node **stack_a)
 {
 	push(stack_b, stack_a);
-	ft_printf("pa");
+	write(1,"pa\n",3);
 }
 void pb(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_a, stack_b);
-	ft_printf("pb");
+	write(1,"pb\n",3);
 }

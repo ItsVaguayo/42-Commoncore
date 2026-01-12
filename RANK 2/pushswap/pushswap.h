@@ -41,6 +41,7 @@ void    add_back(t_node **head, int value);
 void    free_list(t_node *head);
 int     is_sorted(t_node **head);
 int     stack_size(t_node **stack);
+void print_list(t_node **head);
 
 /* ===== OPERATIONS ===== */
 

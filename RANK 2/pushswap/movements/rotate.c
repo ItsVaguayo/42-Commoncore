@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 19:07:43 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/12/22 19:35:32 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/12 10:07:44 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ static void rotate(t_node **stack)
 void ra(t_node **stack_a)
 {
 	rotate(stack_a);
-	ft_printf("ra");
+	write(1,"ra\n",3);
 }
 
 void rb(t_node **stack_b)
 {
 	rotate(stack_b);
-	ft_printf("rb");
+	write(1,"rb\n",3);
 }
 
 void rr(t_node **stack_a, t_node **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_printf("rr");
+	write(1,"rr\n",3);
 }
