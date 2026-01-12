@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 11:38:02 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/12 10:18:44 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/12 10:33:09 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,30 +74,16 @@ void sort_five(t_node **stack_a, t_node **stack_b)
         if (pos <= size / 2)
         {
             while ((*stack_a)->value != min)
-            {
-                print_list(stack_a);
                 ra(stack_a);
-                print_list(stack_a);
-            }
         }
         else
         {
             while ((*stack_a)->value != min)
-               {
-                print_list(stack_a);
                 rra(stack_a);
-                print_list(stack_a);
-            }
         }
         pb(stack_a, stack_b);
-        print_list(stack_b);
     }
     sort_three(stack_a);
     while (*stack_b)
-    {
         pa(stack_b,stack_a);
-        print_list(stack_b);
-        write(1,"\n", 1);
-        print_list(stack_a);
-    }
 }
