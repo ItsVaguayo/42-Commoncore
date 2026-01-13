@@ -1,6 +1,6 @@
 #include "pushswap.h"
 
-void normalize(t_node **stack_a)
+/*void normalize(t_node **stack_a)
 {
     t_node *temp;
     int *arr;
@@ -34,4 +34,4 @@ void normalize(t_node **stack_a)
 		temp->value = count;
 		temp = temp->next; 
     }
-} 
+} */

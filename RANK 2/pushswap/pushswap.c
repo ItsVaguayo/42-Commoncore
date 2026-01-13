@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/12 10:06:04 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/13 19:35:30 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ int main(int argc, char **argv)
     stack_a = parsing(argc, argv);
     if (is_sorted(&stack_a))
         write(1,"sorted", 6);
+    normalize(&stack_a);
+    print_list(&stack_a);
     prueba(&stack_a, argc);
+    print_list(&stack_a);
     return(0);
 }

@@ -62,4 +62,5 @@ void ss(t_node **stack_a, t_node **stack_b);
 void sort_two(t_node **stack_a);
 void sort_three(t_node **stack_a);
 void sort_five(t_node **stack_a, t_node **stack_b);
+void normalize(t_node **stack_a);
 #endif
