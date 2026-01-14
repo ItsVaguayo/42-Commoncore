@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utilities.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/04 11:26:59 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/14 11:53:21 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,7 @@ void build_stack(t_node **stack_a, char **numbers)
         i++;
     }
 }
-void print_list(t_node **head)
-{
-    t_node *temp;
-    
-    if ((*head) == NULL)
-        return;
-    temp = *head;
-    while (temp)
-    {
-       ft_printf("%d\n", temp->value);
-       temp = temp->next;
-    }
-    
-}
+
 int is_sorted(t_node **head)
 {
     t_node *temp;

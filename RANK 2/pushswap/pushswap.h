@@ -20,8 +20,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_strdup(char *src);
 size_t	ft_strlen(const char *s);
 
-int	ft_printf(char const *format, ...);
-
 /* ===== PARSING ===== */
 
 int validate(char **numbers);
@@ -63,4 +61,5 @@ void sort_two(t_node **stack_a);
 void sort_three(t_node **stack_a);
 void sort_five(t_node **stack_a, t_node **stack_b);
 void normalize(t_node **stack_a);
+void radix_sort(t_node **stack_a, t_node **stack_b);
 #endif

@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/13 19:35:30 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/14 11:56:06 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void prueba(t_node **stack_a ,int argc)
+void dispatcher(t_node **stack_a,t_node **stack_b, int stacksize)
 {
-    t_node *stack_b;
-
-    stack_b = NULL;
-    if (argc == 3)
+   
+    if (stacksize == 2)
         sort_two(stack_a);
-    else if (argc == 4)
+    else if (stacksize == 3)
         sort_three(stack_a);
+    else if (stacksize == 4 || stacksize == 5)
+        sort_five(stack_a,stack_b);
     else
-        sort_five(stack_a,&stack_b);
-    
+    {
+        normalize(stack_a);
+        radix_sort(stack_a,stack_b);
+    }
 }
 
 t_node *parsing(int argc, char **argv)
@@ -52,16 +54,15 @@ t_node *parsing(int argc, char **argv)
 int main(int argc, char **argv)
 {
     t_node *stack_a;
-    
+    t_node *stack_b;
+
     if (!(argc > 1))
         exit(0);
 
+    stack_b = NULL;
     stack_a = parsing(argc, argv);
     if (is_sorted(&stack_a))
-        write(1,"sorted", 6);
-    normalize(&stack_a);
-    print_list(&stack_a);
-    prueba(&stack_a, argc);
-    print_list(&stack_a);
+        exit(1);
+    dispatcher(&stack_a,&stack_b, stack_size(&stack_a));
     return(0);
 }

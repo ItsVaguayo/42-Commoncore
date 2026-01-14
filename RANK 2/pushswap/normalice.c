@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   normalice.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:37:41 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/13 20:28:15 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/14 11:34:32 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	*arr_value(t_node **stack_a)
     return(arr);
 }
 
-void normalizestack(t_node **stack_a, int *arr)
+void normalizestack(t_node **stack_a, int *arr,int size)
 {
 	t_node *temp;
     int count;
@@ -45,7 +45,7 @@ void normalizestack(t_node **stack_a, int *arr)
     {
     	i = 0;
     	count = 0;
-        while (arr[i])
+        while (i < size)
         {
             if (arr[i] < temp->value)
                 count++;
@@ -60,5 +60,6 @@ void normalize(t_node **stack_a)
    int *arr;
 
    arr = arr_value(stack_a);
-   normalizestack(stack_a,arr);
+   normalizestack(stack_a,arr,stack_size(stack_a));
+   free (arr);
 } 
