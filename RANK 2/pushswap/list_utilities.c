@@ -12,57 +12,57 @@
 
 #include "pushswap.h"
 
-t_node *create_node(int value)
+t_node	*create_node(int value)
 {
-    t_node *new;
+	t_node	*new;
 
-    new = malloc(sizeof(t_node));
-    new->value = value;
-    new->next = NULL;
-    return (new);
+	new = malloc(sizeof(t_node));
+	new->value = value;
+	new->next = NULL;
+	return (new);
 }
 
-void add_back(t_node **head, int value)
+void	add_back(t_node **head, int value)
 {
-    t_node *new;
-    t_node *temp;
+	t_node	*new;
+	t_node	*temp;
 
-    new = create_node(value);
-    if ((*head) == NULL)
-    {
-        *head = new;
-        return;
-    }
-    temp = *head;
-    while (temp->next)
-        temp = temp->next;
-    temp->next = new;
+	new = create_node(value);
+	if ((*head) == NULL)
+	{
+		*head = new;
+		return ;
+	}
+	temp = *head;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
 }
 
-void build_stack(t_node **stack_a, char **numbers)
+void	build_stack(t_node **stack_a, char **numbers)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (numbers[i] != NULL)
-    {
-        add_back(stack_a,ft_atol(numbers[i]));
-        i++;
-    }
+	i = 0;
+	while (numbers[i] != NULL)
+	{
+		add_back(stack_a, ft_atol(numbers[i]));
+		i++;
+	}
 }
 
-int is_sorted(t_node **head)
+int	is_sorted(t_node **head)
 {
-    t_node *temp;
-    
-    if ((*head) == NULL)
-        return (0);
-    temp = *head;
-    while (temp && temp->next)
-    {
-        if (temp->value > temp->next->value)
-            return (0);
-        temp = temp->next;
-    }
-    return (1);
+	t_node	*temp;
+
+	if ((*head) == NULL)
+		return (0);
+	temp = *head;
+	while (temp && temp->next)
+	{
+		if (temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
 }

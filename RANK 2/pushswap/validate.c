@@ -6,94 +6,96 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 00:09:19 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/02 17:59:09 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:41:38 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static int count_numbers(char **numbers)
+static int	count_numbers(char **numbers)
 {
-    int i = 0;
-    while (numbers[i])
-        i++;
-    return i;
+	int	i;
+
+	i = 0;
+	while (numbers[i])
+		i++;
+	return (i);
 }
 
-long *to_long_array(char **numbers, int size)
+long	*to_long_array(char **numbers, int size)
 {
-    long *arr;
-    int i;
+	long	*arr;
+	int		i;
 
-    arr = malloc(sizeof(long) * size);
-    if (!arr)
-        return NULL;
-
-    i = 0;
-    while (i < size)
-    {
-        arr[i] = ft_atol(numbers[i]);
-        i++;
-    }
-    return arr;
+	arr = malloc(sizeof(long) * size);
+	if (!arr)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		arr[i] = ft_atol(numbers[i]);
+		i++;
+	}
+	return (arr);
 }
 
-int has_duplicates(long *arr, int size)
+int	has_duplicates(long *arr, int size)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    while (i < size)
-    {
-        j = i + 1;
-        while (j < size)
-        {
-            if (arr[i] == arr[j])
-                return (1);
-            j++;
-        }
-        i++;
-    }
-    return 0;
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (arr[i] == arr[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
-int validate_format(char **numbers)
+int	validate_format(char **numbers)
 {
-    size_t i;
-    size_t z;
-    
-    i = 0;
-    z = 0;
-    while (numbers[i])
-    {
-        if (numbers[i][z] == '+' || numbers[i][z] == '-' )
-            z++;
-        if (numbers[i][z] == '\0')
-            return (0);
-        while (numbers[i][z] != '\0')
-        {
-            if (numbers[i][z] < '0' || numbers[i][z] > '9')
-                return (0);
-            z++;
-        }
-        i++;
-        z = 0;
-    }
-    return (1);
+	size_t	i;
+	size_t	z;
+
+	i = 0;
+	z = 0;
+	while (numbers[i])
+	{
+		if (numbers[i][z] == '+' || numbers[i][z] == '-')
+			z++;
+		if (numbers[i][z] == '\0')
+			return (0);
+		while (numbers[i][z] != '\0')
+		{
+			if (numbers[i][z] < '0' || numbers[i][z] > '9')
+				return (0);
+			z++;
+		}
+		i++;
+		z = 0;
+	}
+	return (1);
 }
-int validate(char **numbers)
+
+int	validate(char **numbers)
 {
-    long *arr;
-    int size;
-    
-    if (!numbers)
-        return(0);
-    if (!validate_format(numbers))
-        return (0);
-    size = count_numbers(numbers);
-    arr = to_long_array(numbers, size);
-    if (!arr || has_duplicates(arr, size))
-        return(free(arr),0);
-    return (free(arr),1);
+	long	*arr;
+	int		size;
+
+	if (!numbers)
+		return (0);
+	if (!validate_format(numbers))
+		return (0);
+	size = count_numbers(numbers);
+	arr = to_long_array(numbers, size);
+	if (!arr || has_duplicates(arr, size))
+		return (free(arr), 0);
+	return (free(arr), 1);
 }
