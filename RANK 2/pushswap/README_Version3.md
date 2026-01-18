@@ -1,6 +1,6 @@
 # push_swap
 
-*This project has been created as part of the 42 curriculum by ItsVaguayo.*
+*This project has been created as part of the 42 curriculum by vaguayo-.*
 
 ---
 
@@ -81,20 +81,16 @@ make re
 ### Technical References
 
 - Binary representation and bitwise operations in C  
-  https://en.wikipedia.org/wiki/Bitwise_operations_in_C
+   https://github.com/LeoFu9487/push_swap_tester?source=post_page-----fa746e6aba1e---------------------------------------)
 
 - Radix Sort explanation  
-  https://www.geeksforgeeks.org/radix-sort/
-
-- Stack-based sorting strategies  
-  https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+   https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
 
 ### Use of AI
 
 AI tools (ChatGPT) were used as learning support to:
 
 - Understand radix sort and bitwise algorithms
-- Clarify normalization techniques for negative numbers
 - Explain algorithmic complexity and optimization strategies
 
 All code was written, structured, and debugged manually by the author.
