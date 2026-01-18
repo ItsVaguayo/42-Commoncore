@@ -81,10 +81,10 @@ make re
 ### Technical References
 
 - Binary representation and bitwise operations in C  
-   https://github.com/LeoFu9487/push_swap_tester?source=post_page-----fa746e6aba1e---------------------------------------)
+   https://github.com/LeoFu9487/push_swap_tester?source=post_page-----fa746e6aba1e---------------------------------------
 
 - Radix Sort explanation  
-   https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
+   https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
 
 ### Use of AI
 
