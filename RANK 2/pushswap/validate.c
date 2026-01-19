@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 00:09:19 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/14 12:41:38 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/19 10:04:03 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ long	*to_long_array(char **numbers, int size)
 
 	arr = malloc(sizeof(long) * size);
 	if (!arr)
+		// Que pasa si retorna NULL? Escribes error??
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -95,6 +96,7 @@ int	validate(char **numbers)
 		return (0);
 	size = count_numbers(numbers);
 	arr = to_long_array(numbers, size);
+	// Que pasa si retorna NULL? Escribes error??
 	if (!arr || has_duplicates(arr, size))
 		return (free(arr), 0);
 	return (free(arr), 1);

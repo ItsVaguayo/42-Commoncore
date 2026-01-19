@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:37:41 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/14 12:36:55 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/19 10:00:11 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	*arr_value(t_node **stack_a)
 	size = stack_size(stack_a);
 	arr = malloc(size * sizeof(int));
 	if (!arr)
+		// Leak!!!! No liberas nada al salir forzosamente!!!
 		exit(1);
 	i = 0;
 	while (temp)

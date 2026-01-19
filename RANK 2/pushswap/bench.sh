@@ -1,9 +1,11 @@
 #!/bin/bash
 
+MAX_STACK_SIZE=1000
+
 SIZE=${1:-100}
 
-if [ "$SIZE" -gt 1000 ]; then
-    echo "Error: Maximum stack size allowed is 1000."
+if [ "$SIZE" -gt "$MAX_STACKS_SIZE" ]; then
+    echo "Error: Maximum stack size allowed is $MAX_STACK_SIZE."
     exit 1
 fi
 

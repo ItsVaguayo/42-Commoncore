@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/14 11:56:06 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/19 10:02:29 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ t_node	*parsing(int argc, char **argv)
 	{
 		write(2, "Error\n", 6);
 		if (argc == 2)
-			free_split(numbers);
+			free_split(numbers) // <-- No liberas fuera de este caso???
 		exit(1);
 	}
 	build_stack(&stack_a, numbers);
 	if (argc == 2)
-		free_split(numbers);
+		free_split(numbers) // <-- No liberas fuera de este caso???
 	return (stack_a);
 }
 
@@ -56,10 +56,11 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	if (!(argc > 1))
-		exit(0);
+		exit(0) // Estas en main()!!!! retorna directamente!!!!
 	stack_b = NULL;
 	stack_a = parsing(argc, argv);
 	if (is_sorted(&stack_a))
+		// LEAK!!! LO MISMO!!!!
 		exit(1);
 	dispatcher(&stack_a, &stack_b, stack_size(&stack_a));
 	return (0);

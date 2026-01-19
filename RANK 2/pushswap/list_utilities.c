@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:24:26 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/14 11:53:21 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/19 09:59:12 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_node	*create_node(int value)
 	t_node	*new;
 
 	new = malloc(sizeof(t_node));
+	if (NULL == new)
+		return (NULL);
 	new->value = value;
 	new->next = NULL;
 	return (new);
@@ -28,6 +30,7 @@ void	add_back(t_node **head, int value)
 	t_node	*temp;
 
 	new = create_node(value);
+	// Q pasa si new es nulo???? leak???
 	if ((*head) == NULL)
 	{
 		*head = new;
