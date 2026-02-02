@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:45:33 by vaguayo-          #+#    #+#             */
-/*   Updated: 2026/01/14 12:53:05 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:49:52 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,24 @@ size_t				ft_strlen(const char *s);
 
 /* ===== PARSING ===== */
 
-int					validate(char **numbers);
+long				*validate(char **numbers);
 int					is_valid_number(char *str);
 t_node				*parsing(int argc, char **argv);
 int					validate_format(char **numbers);
 int					has_duplicates(long *arr, int size);
 long				*to_long_array(char **numbers, int size);
 void				*free_split(char **arr);
-void				build_stack(t_node **stack_a, char **numbers);
+void				build_stack(t_node **stack_a, char **numbers, long *arr);
 
 /* ===== LIST UTILS ===== */
 
 t_node				*create_node(int value);
-void				add_back(t_node **head, int value);
+int					add_back(t_node **head, int value);
 void				free_list(t_node *head);
 int					is_sorted(t_node **head);
 int					stack_size(t_node **stack);
 void				print_list(t_node **head);
+void				stack_clear(t_node **head);
 
 /* ===== OPERATIONS ===== */
 
